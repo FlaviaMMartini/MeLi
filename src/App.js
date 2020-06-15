@@ -6,7 +6,7 @@ import theme from '../src/components/themes/default';
 const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
-    background-color: #EDEDED !important;
+    background-color: #EDEDED;
   }
 `
 function App() {
