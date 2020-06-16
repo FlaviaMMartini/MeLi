@@ -70,7 +70,7 @@ const SearchProducts = (history) => {
           <Spin tip="Buscando..." />
         </Col>
       ) : (
-       history.push({ pathname: '/list', state:{data} })
+      <ListResults data={data}/>
       )}
     </Fragment>
   );
