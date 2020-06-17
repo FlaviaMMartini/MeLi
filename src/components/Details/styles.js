@@ -28,7 +28,7 @@ font-size:3rem;
 `;
 
 export const TitleDescription = styled.p`
-padding-top: 6%;
+padding-top: 15%;
 font-size:2rem;
 float: left;
 padding-left:1%

@@ -20,6 +20,10 @@ const Details = () => {
     attributes: [],
   });
 
+  const [response] = useDataApi(`https://api.mercadolibre.com/items/${id}/description`, {
+    plain_text: [],
+  });
+
   useEffect(() => {
     console.log('renderUP');
   });
@@ -55,12 +59,12 @@ const Details = () => {
       ) : (
           <Wrapper>
             <RowCustom>
-              <Col style={{textAlign: 'center'}} xs={24} sm={24} md={15} lg={15} xl={15} >
-                <img width={400} alt="logo" src={data.thumbnail} />
+              <Col style={{textAlign: 'center'}} xs={24} sm={24} md={24} lg={15} xl={15} >
+                <img style={{width:'70%'}} alt="logo" src={data.thumbnail} />
                 <TitleDescription>Descrição do produto</TitleDescription>
-                <h3>{data.description}</h3>
+                 <h3>{response.plain_text}</h3> 
               </Col>
-              <Col xs={24} sm={24} md={9} lg={9} xl={9} >
+              <Col xs={24} sm={24} md={24} lg={9} xl={9} >
                 <span> {data.condition}&nbsp;-&nbsp;{data.sold_quantity}&nbsp;vendidos&nbsp;</span>
                 <Title>{data.title}</Title>
                 <TitlePrice>$ {data.price}</TitlePrice>
