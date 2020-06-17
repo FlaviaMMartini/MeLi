@@ -57,7 +57,7 @@ const SearchProducts = (history) => {
           <Text>Ops! algo deu errado, verifique sua conexão...</Text>
         </Col>
       )}
-      {isLoading ? (
+      {isLoading && (
         <Col
           span={24}
           style={{
@@ -69,9 +69,10 @@ const SearchProducts = (history) => {
         >
           <Spin tip="Buscando..." />
         </Col>
-      ) : (
+      )} 
+      {!isLoading && query!=="" && (
       <ListResults data={data}/>
-      )}
+      )} 
     </Fragment>
   );
 };
