@@ -8,15 +8,12 @@ const ListResults = ({ data, history }) => {
   const[category,setCategory]=useState('');
 
   const next = (item) => {
-    console.log('esse e o history', history);
-    console.log(item);
     history.push({ pathname: `/details/${item}` });
     history.go({ pathname: `/details/${item}` });
   };
 
   return (
     <Wrapper>
-    {data.results.title}
       <List
         pagination={{
           onChange: (page) => {
@@ -29,17 +26,17 @@ const ListResults = ({ data, history }) => {
         renderItem={(item) => (
           <List.Item style={{ backgroundColor: "#ffffff", padding: '2%' }} onClick={() => next(item.id)}>
             <RowCustom>
-              <Col xs={24} sm={24} md={6} lg={6} xl={6} >
+              <Col xs={24} sm={24} md={7} lg={7} xl={7} >
                 <img width={200} alt="logo" src={item.thumbnail} />
               </Col>
-              <Col xs={24} sm={24} md={12} lg={12} xl={12}>
+              <Col xs={24} sm={24} md={11} lg={11} xl={11}>
                 <Row>
                   <Col span={2}>
                     <TextCurrency>$</TextCurrency>
                   </Col>
-                  <Col span={4}>
+                  <Col span={5}>
                     <TitlePrice>{item.price}</TitlePrice>
-                  </Col >{item.shipping.free_shipping && (<Col style={{ marginTop: '3%' }} span={4}>
+                  </Col >{item.shipping.free_shipping && (<Col style={{ marginTop: '3%' }} span={5}>
                     <img src={Shipping} />
                   </Col>)}
                 </Row>
