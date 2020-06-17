@@ -8,7 +8,6 @@ import SearchProducts from "./components/SearchProducts";
 import ListResults from '../src/components/ListResults';
 import Home from '../src/components/pages/Home';
 
-
 const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;

@@ -1,9 +1,9 @@
-import React, { useEffect, useState, Fragment } from "react";
+import React, { useState, Fragment } from "react";
 import ListResults from "../ListResults";
-import { Row, Col } from "antd";
-import { Input, Button } from "antd";
+import { Col } from "antd";
+import { Input } from "antd";
 import Logo_ML from "../../../src/assets/Logo_ML.png";
-import { Wrapper, Logo, Text, Header } from "./styles";
+import { Logo, Text, Header } from "./styles";
 import "antd/dist/antd.css";
 import useDataApi from "use-data-api";
 import { Spin } from "antd";
@@ -19,7 +19,7 @@ const SearchProducts = (history) => {
       results: [],
     }
   );
-
+  
   return (
     <Fragment>
       <form
@@ -70,7 +70,7 @@ const SearchProducts = (history) => {
           <Spin tip="Buscando..." />
         </Col>
       )} 
-      {!isLoading && query!=="" && (
+      {!isLoading && data.results.length !=0 && (
       <ListResults data={data}/>
       )} 
     </Fragment>

@@ -1,11 +1,10 @@
-import React, { useState, useEffect, useCallback } from "react";
-import { List, Row, Col, Button } from "antd";
+import React from "react";
+import { List, Row, Col} from "antd";
 import { withRouter } from "react-router-dom";
 import { Wrapper, RowCustom, Title, TitlePrice, TextCurrency } from './styles';
 import Shipping from '../../assets/ic_shipping.png';
 
 const ListResults = ({ data, history }) => {
-  const[category,setCategory]=useState('');
 
   const next = (item) => {
     history.push({ pathname: `/details/${item}` });

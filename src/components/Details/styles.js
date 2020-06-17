@@ -10,7 +10,7 @@ margin-bottom:1%;
 `;
 export const RowCustom = styled(Row)`
 width:100%;
-height: 50rem;
+height: inherit;
 background-color: #ffffff;
 padding: 2%;
 }
@@ -31,7 +31,8 @@ export const TitleDescription = styled.p`
 padding-top: 15%;
 font-size:2rem;
 float: left;
-padding-left:1%
+padding-left:1%;
+width: 100%;
 }
 `;
 
