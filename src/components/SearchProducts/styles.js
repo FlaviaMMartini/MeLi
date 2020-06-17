@@ -3,7 +3,7 @@ import { Row } from 'antd';
 
 export const Header = styled(Row)`
 background-color:#ffe600;
-padding:1rem;
+padding:1rem 9rem 1rem 9rem;
 }
 `;
 
