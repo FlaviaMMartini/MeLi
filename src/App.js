@@ -3,10 +3,13 @@ import Details from "../src/components/Details";
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
 import theme from '../src/components/themes/default';
 import history from '../src/components/history';
+import { I18nextProvider } from 'react-i18next';
+import i18n from './i18n';
 import { Router, Switch, Route } from 'react-router-dom';
 import SearchProducts from "./components/SearchProducts";
 import ListResults from '../src/components/ListResults';
 import Home from '../src/components/pages/Home';
+
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -18,6 +21,7 @@ function App() {
   return(
   <Fragment>
     <GlobalStyle />
+    <I18nextProvider i18n={i18n}>
     <ThemeProvider theme={theme}>
     <Router history={history}>
           <Switch>
@@ -28,6 +32,7 @@ function App() {
           </Switch>
         </Router>
     </ThemeProvider>
+    </I18nextProvider>
     </Fragment>
   )
 }

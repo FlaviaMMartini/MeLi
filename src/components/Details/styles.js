@@ -33,6 +33,14 @@ font-size:2rem;
 float: left;
 padding-left:1%;
 width: 100%;
+text-align:left;
+}
+`;
+
+export const TextDescription = styled.p`
+padding-top: 15%;
+font-size:1rem;
+text-align:left;
 }
 `;
 

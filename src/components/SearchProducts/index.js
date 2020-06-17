@@ -7,11 +7,12 @@ import { Logo, Text, Header } from "./styles";
 import "antd/dist/antd.css";
 import useDataApi from "use-data-api";
 import { Spin } from "antd";
+import { withTranslation} from 'react-i18next';
 import { withRouter } from "react-router-dom";
 
 const { Search } = Input;
 
-const SearchProducts = (history) => {
+const SearchProducts = (history, t) => {
   const [query, setQuery] = useState("");
   const [{ data, isLoading, isError }, doFetch] = useDataApi(
     `https://api.mercadolibre.com/sites/MLA/search?q=:${query}`,
@@ -54,7 +55,7 @@ const SearchProducts = (history) => {
             marginTop: "3rem",
           }}
         >
-          <Text>Ops! algo deu errado, verifique sua conexão...</Text>
+          <Text>{t("Ops! algo deu errado, verifique sua conexão...")}</Text>
         </Col>
       )}
       {isLoading && (
@@ -77,4 +78,4 @@ const SearchProducts = (history) => {
   );
 };
 
-export default  withRouter(SearchProducts);
+export default  withTranslation('translations')(SearchProducts);
