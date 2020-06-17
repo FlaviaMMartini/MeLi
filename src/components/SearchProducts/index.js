@@ -20,7 +20,6 @@ const SearchProducts = (history) => {
     }
   );
 
-
   return (
     <Fragment>
       <form
@@ -34,10 +33,11 @@ const SearchProducts = (history) => {
           <Col span={4}>
             <Logo src={Logo_ML} alt="logo" />
           </Col>
-          <Col xs={20} sm={20} md={16} lg={16} xl={16}>
+          <Col span={20}>
             <Search
               placeholder="Nunca dejes de buscar"
               type="text"
+              size="large"
               value={query}
               onChange={(event) => setQuery(event.target.value)}
             />
